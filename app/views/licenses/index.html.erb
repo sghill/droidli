@@ -2,6 +2,10 @@
 
 <ul>
     <% @licenses.each do |l| %>
-        <li><%= link_to l.name, l.url %></li>
+        <% if l.url.present? %>
+            <li><%= link_to l.name, l.url %></li>
+        <% else %>
+            <li><%= l.name %></li>
+        <% end %>
     <% end %>
 </ul>
