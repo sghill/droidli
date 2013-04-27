@@ -17,12 +17,23 @@
 
   <body>
     <div class="row">
-        <div class="large-12 columns">
+        <div class="large-9 columns">
             <h1>
                 <%= link_to 'droid.li', root_url %>
                 <small>an android developer&apos;s best friend</small>
             </h1>
         </div>
+        <div class="large-3 columns">
+            <p style="text-align: right; margin-top:30px">
+                <% if current_user %>
+                    Welcome @<%= current_user.name %>!
+                    <%= link_to "Sign Out", signout_path %>
+                <% else %>
+                    <%= link_to image_tag("sign-in-with-twitter-gray.png"), "/auth/twitter" %>
+                <% end %>
+            </p>
+        </div>
+        <hr />
     </div>
     <div class="row">
         <div class="large-12 columns">
@@ -34,7 +45,7 @@
             <hr />
             <p style="text-align: center">
                 This idea is in super-alpha. Show me you care<br />
-                <a href="https://twitter.com/intent/tweet?screen_name=sghill&text=I%20think%20the%20%23android%20%23development%20world%20needs%20https%3A%2F%2Fdroid.li%2F" class="twitter-mention-button" data-size="large" data-related="sghill">Tweet to @sghill</a>
+                <a href="https://twitter.com/intent/tweet?screen_name=sghill&text=I%20think%20the%20%23android%20%23development%20world%20needs%20%23droidli%20https%3A%2F%2Fdroid.li%2F" class="twitter-mention-button" data-size="large" data-related="sghill">Tweet to @sghill</a>
                 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
             </p>
         </div>

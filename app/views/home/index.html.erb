@@ -1,9 +1,24 @@
-
-
-<% if current_user %>
-    Welcome <%= current_user.name %>!
-    <%= link_to "Sign Out", signout_path %>
-<% else %>
-    <%= link_to "Sign in with Twitter", "/auth/twitter" %>
-<% end %>
-
+<div class="row">
+    <div class="large-6 columns">
+        <h2>why</h2>
+        <p>The Android community is <u>awesome</u>, but fragmented.</p>
+        <p>Every day, I stumble upon libraries that</p>
+        <ul style="list-style-type: none">
+            <li>make development easier</li>
+            <li>make testing possible</li>
+            <li>compete with each other</li>
+        </ul>
+        <p>I don't want to <strong>stumble</strong> onto such useful tools any longer.</p>
+    </div>
+    <div class="large-6 columns">
+        <h2>what</h2>
+        <p>Unearthing the great, hidden tools out there.</p>
+        <p>A community-driven collection of open-source libraries featuring</p>
+        <ul style="list-style-type: none">
+            <li>current project homes</li>
+            <li>helpful documentation</li>
+            <li>licenses, clearly displayed</li>
+        </ul>
+        <p>And <strong>recognition</strong> for contributions.</p>
+    </div>
+</div>
