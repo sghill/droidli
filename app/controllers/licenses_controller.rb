@@ -1,8 +1,8 @@
 class LicensesController < ApplicationController
-  before_filter :authenticate, :except => :index
+  skip_before_filter :require_login, :only => :index
 
   def index
-    @licenses = License.all
+    @licenses = License.limit(100)
   end
 
   def new
@@ -14,15 +14,11 @@ class LicensesController < ApplicationController
     @license.updated_by = current_user
     @license.tweetable = params[:tweetable]
     if @license.save
-      flash[:notice] = "thanks for adding a license, #{current_user.name}"
+      flash[:notice] = "thanks for adding a license, @#{current_user.name}!"
       redirect_to licenses_url
     else
       render :new
     end
   end
 
-  private
-  def authenticate
-    redirect_to root_url if current_user.nil?
-  end
 end

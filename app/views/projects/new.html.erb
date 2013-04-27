@@ -1,0 +1,8 @@
+<h2>tell us about a library</h2>
+
+<%= form_for @project do |p| %>
+    <p><%= p.text_field :name, :placeholder => 'e.g. RoboGuice' %></p>
+    <p><%= p.url_field :url, :placeholder => 'e.g. https://github.com/roboguice/roboguice' %></p>
+    <p><%= p.select :license_id, @licenses, {:include_blank => true} %></p>
+    <p><%= p.submit %></p>
+<% end %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130427151255) do
+ActiveRecord::Schema.define(:version => 20130427193255) do
 
   create_table "license_contributions", :force => true do |t|
     t.integer  "user_id",                       :null => false
@@ -37,6 +37,18 @@ ActiveRecord::Schema.define(:version => 20130427151255) do
   end
 
   add_index "licenses", ["name"], :name => "index_licenses_on_name", :unique => true
+
+  create_table "projects", :force => true do |t|
+    t.string   "name",                                :null => false
+    t.string   "url"
+    t.integer  "license_id"
+    t.boolean  "in_maven_central", :default => false, :null => false
+    t.datetime "created_at",                          :null => false
+    t.datetime "updated_at",                          :null => false
+  end
+
+  add_index "projects", ["license_id"], :name => "index_projects_on_license_id"
+  add_index "projects", ["name"], :name => "index_projects_on_name", :unique => true
 
   create_table "users", :force => true do |t|
     t.string   "provider"
