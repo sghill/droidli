@@ -1,8 +1,58 @@
-<h2>tell us about a library</h2>
+<div class="row">
+    <div class="large-12 column">
+        <h2>add a library</h2>
+    </div>
+</div>
+
+<div class="row">
+    <div class="large-12 column">
+        <p style="text-align: center; background-color: lightyellow">note: this is currently one-time save</p>
+    </div>
+</div>
 
 <%= form_for @project do |p| %>
-    <p><%= p.text_field :name, :placeholder => 'e.g. RoboGuice' %></p>
-    <p><%= p.url_field :url, :placeholder => 'e.g. https://github.com/roboguice/roboguice' %></p>
-    <p><%= p.select :license_id, @licenses, {:include_blank => true} %></p>
-    <p><%= p.submit %></p>
+<div class="row">
+    <div class="large-1 column">
+        <p>name</p>
+    </div>
+    <div class="large-5 column">
+        <p><%= p.text_field :name, :placeholder => 'e.g. RoboGuice' %></p>
+    </div>
+    <div class="large-1 column">
+        <p>license</p>
+    </div>
+    <div class="large-5 column">
+        <p><%= p.select :license_id, @licenses, {:include_blank => true} %></p>
+    </div>
+</div>
+<div class="row">
+    <div class="large-1 column">
+        <p>address</p>
+    </div>
+    <div class="large-5 column">
+        <p><%= p.url_field :url, :placeholder => 'e.g. https://github.com/roboguice/roboguice' %></p>
+    </div>
+    <div class="large-1 column">
+        <p>tags</p>
+    </div>
+    <div class="large-5 column">
+        <p><%= text_field_tag :tags, nil, :placeholder => 'e.g. space-separated dependency-injection' %></p>
+    </div>
+</div>
+<div class="row">
+    <div class="large-10 column">
+        <p>
+            <%= radio_button_tag :tweetable, true, true %>
+            <%= label_tag :tweetable_true, 'You can tweet at me!' %>
+            <%= radio_button_tag :tweetable, false, false %>
+            <%= label_tag :tweetable_false, "Please don't tweet at me" %>
+        </p>
+    </div>
+    <div class="large-2 column">
+        <p style="text-align: right"><%= p.submit 'add library' %></p>
+    </div>
+</div>
+
 <% end %>
+
+</div>

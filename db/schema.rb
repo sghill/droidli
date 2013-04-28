@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130427193255) do
+ActiveRecord::Schema.define(:version => 20130427222206) do
 
   create_table "license_contributions", :force => true do |t|
     t.integer  "user_id",                       :null => false
@@ -38,6 +38,16 @@ ActiveRecord::Schema.define(:version => 20130427193255) do
 
   add_index "licenses", ["name"], :name => "index_licenses_on_name", :unique => true
 
+  create_table "project_tags", :force => true do |t|
+    t.integer  "project_id", :null => false
+    t.integer  "tag_id",     :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "project_tags", ["project_id"], :name => "index_project_tags_on_project_id"
+  add_index "project_tags", ["tag_id"], :name => "index_project_tags_on_tag_id"
+
   create_table "projects", :force => true do |t|
     t.string   "name",                                :null => false
     t.string   "url"
@@ -49,6 +59,14 @@ ActiveRecord::Schema.define(:version => 20130427193255) do
 
   add_index "projects", ["license_id"], :name => "index_projects_on_license_id"
   add_index "projects", ["name"], :name => "index_projects_on_name", :unique => true
+
+  create_table "tags", :force => true do |t|
+    t.string   "name",       :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "tags", ["name"], :name => "index_tags_on_name", :unique => true
 
   create_table "users", :force => true do |t|
     t.string   "provider"
