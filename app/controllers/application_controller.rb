@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
-  force_ssl
+  #force_ssl
   before_filter :require_login
   helper_method :current_user
 
