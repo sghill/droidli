@@ -1,7 +1,9 @@
 source 'https://rubygems.org'
+ruby '1.9.3'
 
 gem 'rails'
 gem 'omniauth-twitter'
+gem 'thin'
 
 group :development, :test do
   gem 'sqlite3'
