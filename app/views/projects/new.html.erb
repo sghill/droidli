@@ -41,11 +41,15 @@
 </div>
 <div class="row">
     <div class="large-10 column">
-        <p>
-            <%= radio_button_tag :tweetable, true, true %>
-            <%= label_tag :tweetable_true, 'You can tweet at me!' %>
-            <%= radio_button_tag :tweetable, false, false %>
-            <%= label_tag :tweetable_false, "Please don't tweet at me" %>
+        <p style="white-space: nowrap">
+            <label for="tweetable_true">
+                <%= radio_button_tag :tweetable, true, true %>
+                Sure, you can thank me for this on Twitter!
+            </label>
+            <label for="tweetable_false">
+                <%= radio_button_tag :tweetable, false, false %>
+                Please don't tweet at me
+            </label>
         </p>
     </div>
     <div class="large-2 column">
