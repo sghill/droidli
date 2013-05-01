@@ -8,7 +8,10 @@ class ApplicationController < ActionController::Base
 
   private
   def require_login
-    redirect_to root_url if current_user.nil?
+    if current_user.nil?
+      flash[:notice] = "hey! you have to sign in first :)"
+      redirect_to root_url
+    end
   end
 
   def current_user
