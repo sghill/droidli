@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130427222206) do
+ActiveRecord::Schema.define(:version => 20130501002241) do
 
   create_table "license_contributions", :force => true do |t|
     t.integer  "user_id",                       :null => false
@@ -37,6 +37,22 @@ ActiveRecord::Schema.define(:version => 20130427222206) do
   end
 
   add_index "licenses", ["name"], :name => "index_licenses_on_name", :unique => true
+
+  create_table "project_contributions", :force => true do |t|
+    t.integer  "user_id",                       :null => false
+    t.integer  "project_id",                    :null => false
+    t.string   "action",                        :null => false
+    t.boolean  "tweetable",  :default => false, :null => false
+    t.boolean  "tweeted",    :default => false, :null => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
+  end
+
+  add_index "project_contributions", ["action"], :name => "index_project_contributions_on_action"
+  add_index "project_contributions", ["project_id"], :name => "index_project_contributions_on_project_id"
+  add_index "project_contributions", ["tweetable"], :name => "index_project_contributions_on_tweetable"
+  add_index "project_contributions", ["tweeted"], :name => "index_project_contributions_on_tweeted"
+  add_index "project_contributions", ["user_id"], :name => "index_project_contributions_on_user_id"
 
   create_table "project_tags", :force => true do |t|
     t.integer  "project_id", :null => false
