@@ -5,8 +5,23 @@
     <hr />
 </div>
 
+<div class="row">
+    <div class="large-12 column">
+        <div class="row">
+            <div class="large-4 column">
+                <p class="center">library</p>
+            </div>
+            <div class="large-4 column">
+                <p class="center">tags</p>
+            </div>
+            <div class="large-4 column">
+                <p class="center">made possible by</p>
+            </div>
+        </div>
+    </div>
+</div>
 <% @projects.each do |p| %>
-    <div class="row">
+    <div class="row <%= cycle('even', 'odd') %>">
         <div class="large-12 column">
             <div class="row">
                 <div class="large-4 column">
@@ -17,10 +32,10 @@
                     <% end %>
                 </div>
                 <div class="large-4 column">
-                    <p><%= p.tags.map { |t| t.name }.to_sentence %></p>
+                    <p class="center"><%= p.tags.map { |t| t.name }.to_sentence %></p>
                 </div>
                 <div class="large-4 columns">
-                    <p>Thanks to twitter handles of contributors</p>
+                    <p class="center"><%= p.project_contributions.map { |c| link_to("@#{c.user.name}", "https://twitter.com/#{c.user.name}") }.to_sentence %></p>
                 </div>
             </div>
         </div>
