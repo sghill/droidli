@@ -17,7 +17,7 @@
                     <% end %>
                 </div>
                 <div class="large-4 column">
-                    <p>tags go here</p>
+                    <p><%= p.tags.map { |t| t.name }.to_sentence %></p>
                 </div>
                 <div class="large-4 columns">
                     <p>Thanks to twitter handles of contributors</p>

@@ -15,7 +15,7 @@ class ProjectsController < ApplicationController
     @project.tweetable = params[:tweetable]
     @project.updated_by = current_user
     params[:tags].split(" ").each do |tag_name|
-      @project.tags.build(Tag.find_or_create_by_name(tag_name))
+      @project.tags << Tag.find_or_create_by_name(tag_name)
     end
     if @project.save
       flash[:notice] = "thanks for adding a library, @#{current_user.name}!"
