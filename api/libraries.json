@@ -45,6 +45,13 @@
     "tags": ["ruby"],
     "projectTwitter": "MrRuboto",
     "droidliContributorsTwitter": ["akiellor"]
+  }, {
+    "name": "Buck",
+    "licenses": ["Apache 2.0"],
+    "sourceCodeHome": "https://github.com/facebook/buck",
+    "documentationHome": "http://facebook.github.io/buck/",
+    "tags": ["build", "intellij-project-setup"],
+    "projectTwitter": null,
+    "droidliContributorsTwitter": ["akiellor"]
   }]
 }
-
