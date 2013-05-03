@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<!--[if IE 8]> 				 <html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  	<meta charset="utf-8" />
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  	<title>droid.li</title>
+  	<link href="../css/normalize.css" media="screen" rel="stylesheet" type="text/css" />
+  	<link href="../css/foundation.min.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+      h4 {
+        display: inline;
+      }
+    </style>
+    <script src="../js/librariesViewModel.js" type="text/javascript"></script>
+    <script src="../js/libraryViewModel.js" type="text/javascript"></script>
+    <script src="../js/custom.modernizr.js" type="text/javascript"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.0/jquery.min.js" type="text/javascript"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/knockout/2.2.1/knockout-min.js" type="text/javascript"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/foundation/4.1.2/js/foundation.min.js" type="text/javascript"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.4/underscore-min.js" type="text/javascript"></script>
+  </head>
+
+  <body>
+    <div class="row">
+        <div class="large-12 columns">
+            <h1>
+                <a href="http://droid.li/">droid.li</a>
+                <small>&hearts; android</small>
+            </h1>
+        </div>
+        <hr />
+    </div>
+</div>
+
+<div class="row">
+    <div class="large-12 column">
+        <div class="row">
+            <div class="large-4 column">
+                <p class="center">library</p>
+            </div>
+            <div class="large-4 column">
+                <p class="center">tags</p>
+            </div>
+            <div class="large-2 column">
+                <p class="center">license</p>
+            </div>
+            <div class="large-2 column">
+                <p class="center">added by</p>
+            </div>
+        </div>
+    </div>
+</div>
+    <div id="libraries" data-bind="foreach: libraries">
+      <div class="row">
+        <div class="large-12 column">
+          <div class="row">
+            <div class="large-4 column">
+              <h4 data-bind="text: name"></h4>
+              <a data-bind="attr: { href: sourceCodeHome }">src</a> |
+              <a data-bind="attr: { href: documentationHome }">docs</a>
+            </div>
+            <div class="large-4 column">
+              <p class="center" data-bind="text: tags"></p>
+            </div>
+            <div class="large-2 column">
+              <p class="center" data-bind="text: licenses"></p>
+            </div>
+            <div class="large-2 columns">
+              <p class="center" data-bind="foreach: droidliContributorsTwitter">
+                <a data-bind="attr: { href: address }"><span data-bind="text: displayName"></span></a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="row">
+        <div class="large-12 columns">
+            <hr />
+            <p style="text-align: center">
+                This idea is in super-alpha. Show me you care<br />
+                <a href="https://twitter.com/intent/tweet?screen_name=sghill&text=I%20think%20the%20%23android%20%23development%20world%20needs%20%23droidli%20https%3A%2F%2Fdroid.li%2F" class="twitter-mention-button" data-size="large" data-related="sghill">Tweet to @sghill</a>
+                <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+            </p>
+        </div>
+    </footer>
+    <script>
+      $(document).foundation();
+      $(function() {
+        $.getJSON("/api/libraries.json", function(response) {
+          ko.applyBindings(librariesViewModel(response.libraries));
+        });
+      })
+    </script>
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-40572705-1', 'droid.li');
+        ga('send', 'pageview');
+    </script>
+  </body>
+</html>

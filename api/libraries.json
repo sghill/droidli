@@ -4,7 +4,7 @@
     "licenses": ["Apache 2.0"],
     "sourceCodeHome": "https://github.com/RoboBinding/RoboBinding",
     "documentationHome": "http://robobinding.github.io/RoboBinding",
-    "tags": ["presentation-model", "view-model", "binding", "mvvm"],
+    "tags": ["view-model", "binding", "mvvm"],
     "projectTwitter": "RoboBinding",
     "droidliContributorsTwitter": ["sghill"]
   },{
@@ -12,7 +12,7 @@
     "licenses": ["MIT"],
     "sourceCodeHome": "https://github.com/gueei/AndroidBinding",
     "documentationHome": "http://code.google.com/p/android-binding",
-    "tags": ["presentation-model", "view-model", "binding", "mvvm"],
+    "tags": ["view-model", "binding", "mvvm"],
     "droidliContributorsTwitter": ["sghill"]
   }, {
     "name": "Robolectric",
