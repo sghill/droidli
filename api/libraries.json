@@ -53,5 +53,13 @@
     "tags": ["build", "intellij-project-setup"],
     "projectTwitter": null,
     "droidliContributorsTwitter": ["akiellor"]
+  }, {
+    "name": "Android Maven Plugin",
+    "licenses": ["Apache 2.0"],
+    "sourceCodeHome": "https://github.com/jayway/maven-android-plugin",
+    "documentationHome": "https://github.com/jayway/maven-android-plugin",
+    "tags": ["build", "maven"],
+    "projectTwitter": null,
+    "droidliContributorsTwitter": ["akiellor"]
   }]
 }
