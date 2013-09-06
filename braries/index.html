@@ -34,29 +34,11 @@
     </div>
 </div>
 
-<div class="row">
-    <div class="large-12 column">
-        <div class="row">
-            <div class="large-4 column">
-                <p class="center">library</p>
-            </div>
-            <div class="large-4 column">
-                <p class="center">tags</p>
-            </div>
-            <div class="large-2 column">
-                <p class="center">license</p>
-            </div>
-            <div class="large-2 column">
-                <p class="center">added by</p>
-            </div>
-        </div>
-    </div>
-</div>
     <div id="libraries" data-bind="foreach: libraries">
       <div class="row">
         <div class="large-12 column">
           <div class="row">
-            <div class="large-4 column">
+            <div class="large-6 column">
               <h4 data-bind="text: name"></h4>
               <a data-bind="attr: { href: sourceCodeHome }">src</a> |
               <a data-bind="attr: { href: documentationHome }">docs</a>
@@ -67,11 +49,6 @@
             <div class="large-2 column">
               <p class="center" data-bind="text: licenses"></p>
             </div>
-            <div class="large-2 columns">
-              <p class="center" data-bind="foreach: droidliContributorsTwitter">
-                <a data-bind="attr: { href: address }"><span data-bind="text: displayName"></span></a>
-              </p>
-            </div>
           </div>
         </div>
       </div>
@@ -80,8 +57,7 @@
         <div class="large-12 columns">
             <hr />
             <p style="text-align: center">
-                This idea is in super-alpha. Show me you care<br />
-                <a href="https://twitter.com/intent/tweet?screen_name=sghill&text=I%20think%20the%20%23android%20%23development%20world%20needs%20%23droidli%20https%3A%2F%2Fdroid.li%2F" class="twitter-mention-button" data-size="large" data-related="sghill">Tweet to @sghill</a>
+                <a href="https://twitter.com/intent/tweet?screen_name=sghill" class="twitter-mention-button" data-size="large" data-related="sghill">@sghill</a>
                 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
             </p>
         </div>
