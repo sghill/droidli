@@ -69,5 +69,13 @@
     "tags": ["dependency-injection", "view-injection"],
     "projectTwitter": "JakeWharton",
     "droidliContributorsTwitter": ["sghill"]
+  }, {
+    "name": "RoboSpice",
+    "licenses": ["Apache 2.0"],
+    "sourceCodeHome": "https://github.com/octo-online/robospice",
+    "documentationHome": "https://github.com/octo-online/robospice/wiki",
+    "tags": ["network", "async"],
+    "projectTwitter": "RoboSpice",
+    "droidliContributorsTwitter": ["sghill"]
   }]
 }
