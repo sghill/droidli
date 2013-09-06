@@ -61,5 +61,13 @@
     "tags": ["build", "maven"],
     "projectTwitter": null,
     "droidliContributorsTwitter": ["akiellor"]
+  }, {
+    "name": "Butter Knife",
+    "licenses": ["Apache 2.0"],
+    "sourceCodeHome": "https://github.com/JakeWharton/butterknife",
+    "documentationHome": "http://jakewharton.github.io/butterknife/",
+    "tags": ["dependency-injection", "view-injection"],
+    "projectTwitter": "JakeWharton",
+    "droidliContributorsTwitter": ["sghill"]
   }]
 }
