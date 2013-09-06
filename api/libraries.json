@@ -77,5 +77,13 @@
     "tags": ["network", "async"],
     "projectTwitter": "RoboSpice",
     "droidliContributorsTwitter": ["sghill"]
+  }, {
+    "name": "Ion",
+    "licenses": ["Apache 2.0"],
+    "sourceCodeHome": "https://github.com/koush/ion",
+    "documentationHome": "https://github.com/koush/ion#samples",
+    "tags": ["network", "async"],
+    "projectTwitter": "koush",
+    "droidliContributorsTwitter": ["sghill"]
   }]
 }
