@@ -85,5 +85,13 @@
     "tags": ["network", "async"],
     "projectTwitter": "koush",
     "droidliContributorsTwitter": ["sghill"]
+  }, {
+    "name": "Timber",
+    "licenses": ["Apache 2.0"],
+    "sourceCodeHome": "https://github.com/JakeWharton/timber",
+    "documentationHome": "https://github.com/JakeWharton/timber",
+    "tags": ["logging"],
+    "projectTwitter": "JakeWharton",
+    "droidliContributorsTwitter": ["sghill"]
   }]
 }
