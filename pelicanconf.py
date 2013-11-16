@@ -4,12 +4,15 @@ from __future__ import unicode_literals
 
 AUTHOR = u'Steve Hill'
 SITENAME = u'droid.li'
-SITEURL = ''
-
+SITEURL = u'http://droid.li'
 TIMEZONE = 'Europe/Paris'
 
 DEFAULT_LANG = u'en'
 
+THEME = "notmyidea"
+PATH = "content"
+
+RELATIVE_URLS = True
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
 CATEGORY_FEED_ATOM = None
