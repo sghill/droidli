@@ -93,5 +93,14 @@
     "tags": ["logging"],
     "projectTwitter": "JakeWharton",
     "droidliContributorsTwitter": ["sghill"]
+  }, {
+    "name": "android-log-collector",
+    "licenses": ["Apache 2.0"],
+    "sourceCodeHome": "http://code.google.com/p/android-log-collector",
+    "documentationHome": "http://code.google.com/p/android-log-collector",
+    "tags": ["logging", "production support"],
+    "projectTwitter": "",
+    "droidliContributorsTwitter": ["sghill"],
+    "mailingList": "https://groups.google.com/forum/#!forum/android-log-collector"
   }]
 }
