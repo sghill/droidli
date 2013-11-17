@@ -4,6 +4,11 @@ Timber
 :date: 2013-12-01
 :tags: logging
 :summary: @JakeWharton's Timber makes logging nicer.
+:status: draft
+
+.. raw:: html
+
+    <iframe width="560" height="315" src="//www.youtube.com/embed/9R7-Uiao5ZI?rel=0" frameborder="0" allowfullscreen></iframe>
 
 Timber_ is a logging library from `@JakeWharton`_ with two features
 that make including it in your next Android project an easy decision:
@@ -52,14 +57,14 @@ Easy-to-Swap Implementations
 ============================
 
 There are many reasons to log a *lot* of information in development. I know I'd
-always rather have too much information than too little when implementing new 
+always rather have too much information than too little when implementing new
 features or troubleshooting why something doesn't work the way I expect. All
 this goes out the window when we head to production, however. Logging in
-production impacts performance, and the information that comes back to us is 
+production impacts performance, and the information that comes back to us is
 several orders of magnitude lower.
 
 If you stick to the standard ``android.util.Log`` implementation, there is no
-discerning which environment you're in. A call to Log happens in every 
+discerning which environment you're in. A call to Log happens in every
 environment. Timber steps in to fill the gap here very well, and takes the
 opportunity to extend its tree metaphor further.
 
@@ -89,7 +94,7 @@ Vitals
 | Source         | https://github.com/JakeWharton/timber                           |
 +----------------+-----------------------------------------------------------------+
 | Sample Project | https://github.com/JakeWharton/timber/tree/master/timber-sample |
-+----------------+-----------------------------------------------------------------+ 
++----------------+-----------------------------------------------------------------+
 | Mailing List   | No                                                              |
 +----------------+-----------------------------------------------------------------+
 | IRC            | No                                                              |
@@ -98,4 +103,4 @@ Vitals
 .. _Timber: https://github.com/JakeWharton/timber
 .. _@JakeWharton: https://twitter.com/JakeWharton
 .. _`official Android docs`: https://developer.android.com/reference/android/util/Log.html
-.. _`Timber sample project`: https://github.com/JakeWharton/timber/blob/master/timber-sample/src/main/java/com/example/timber/ExampleApp.java 
+.. _`Timber sample project`: https://github.com/JakeWharton/timber/blob/master/timber-sample/src/main/java/com/example/timber/ExampleApp.java
