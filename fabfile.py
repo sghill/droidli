@@ -38,10 +38,5 @@ def preview():
 @hosts(production)
 def publish():
     local('pelican -s publishconf.py')
-    project.rsync_project(
-        remote_dir=dest_path,
-        exclude=".DS_Store",
-        local_dir=DEPLOY_PATH.rstrip('/') + '/',
-        delete=True
-    )
+    local('ghp-import output')
 
