@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <title>Timber</title>
+        <link rel="stylesheet" href="http://droid.li/theme/css/main.css" />
+        <link href="http://droid.li/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="droid.li Atom Feed" />
+
+        <!--[if IE]>
+            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="http://droid.li/">droid.li </a></h1>
+                <nav><ul>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="http://droid.li/timber.html" rel="bookmark"
+           title="Permalink to Timber">Timber</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2013-12-01T00:00:00">
+                Sun 01 December 2013
+        </abbr>
+
+        <address class="vcard author">
+                By <a class="url fn" href="http://droid.li/author/steve-hill.html">Steve Hill</a>
+        </address>
+<p>In <a href="http://droid.li/category/libraries.html">libraries</a>. </p>
+<p>tags: <a href="http://droid.li/tag/logging.html">logging</a></p>
+</footer><!-- /.post-info -->      <iframe width="560" height="315" src="//www.youtube.com/embed/9R7-Uiao5ZI?rel=0" frameborder="0" allowfullscreen></iframe><p><a class="reference external" href="https://github.com/JakeWharton/timber">Timber</a> is a logging library from <a class="reference external" href="https://twitter.com/JakeWharton">&#64;JakeWharton</a> with two features
+that make including it in your next Android project an easy decision:</p>
+<ol class="arabic simple">
+<li>tag inference</li>
+<li>easy-to-swap implementations</li>
+</ol>
+<div class="section" id="tag-inference">
+<h2>Tag Inference</h2>
+<p>The <a class="reference external" href="https://developer.android.com/reference/android/util/Log.html">official Android docs</a> are great for getting started with Android.
+Unfortunately, every place a developer logs is another place to define a static
+tag variable somewhere.</p>
+<div class="highlight"><pre><span class="kn">package</span> <span class="n">li</span><span class="o">.</span><span class="na">droid</span><span class="o">.</span><span class="na">example</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">android.util.Log</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">TimberActivity</span> <span class="kd">extends</span> <span class="n">android</span><span class="o">.</span><span class="na">app</span><span class="o">.</span><span class="na">Activity</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">TAG</span> <span class="o">=</span> <span class="n">TimberActivity</span><span class="o">.</span><span class="na">class</span><span class="o">.</span><span class="na">getSimpleName</span><span class="o">();</span>
+
+    <span class="nd">@Override</span> <span class="kd">public</span> <span class="kt">void</span> <span class="n">onCreate</span><span class="o">(</span><span class="n">android</span><span class="o">.</span><span class="na">os</span><span class="o">.</span><span class="na">Bundle</span> <span class="n">saveInstanceState</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
+        <span class="n">Log</span><span class="o">.</span><span class="na">i</span><span class="o">(</span><span class="n">TAG</span><span class="o">,</span> <span class="s">&quot;in onCreate!&quot;</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+<p>With Timber, we shed a line of code and a parameter.</p>
+<div class="highlight"><pre><span class="kn">package</span> <span class="n">li</span><span class="o">.</span><span class="na">droid</span><span class="o">.</span><span class="na">example</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">timber.log.Timber</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">TimberActivity</span> <span class="kd">extends</span> <span class="n">android</span><span class="o">.</span><span class="na">app</span><span class="o">.</span><span class="na">Activity</span> <span class="o">{</span>
+    <span class="nd">@Override</span> <span class="kd">public</span> <span class="kt">void</span> <span class="n">onCreate</span><span class="o">(</span><span class="n">android</span><span class="o">.</span><span class="na">os</span><span class="o">.</span><span class="na">Bundle</span> <span class="n">saveInstanceState</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
+        <span class="n">Timber</span><span class="o">.</span><span class="na">i</span><span class="o">(</span><span class="s">&quot;in onCreate!&quot;</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<div class="section" id="easy-to-swap-implementations">
+<h2>Easy-to-Swap Implementations</h2>
+<p>There are many reasons to log a <em>lot</em> of information in development. I know I'd
+always rather have too much information than too little when implementing new
+features or troubleshooting why something doesn't work the way I expect. All
+this goes out the window when we head to production, however. Logging in
+production impacts performance, and the information that comes back to us is
+several orders of magnitude lower.</p>
+<p>If you stick to the standard <tt class="docutils literal">android.util.Log</tt> implementation, there is no
+discerning which environment you're in. A call to Log happens in every
+environment. Timber steps in to fill the gap here very well, and takes the
+opportunity to extend its tree metaphor further.</p>
+<p>A <tt class="docutils literal">Timber.HollowTree</tt> is typically used in production, and every operation is
+a no-op by default. This can be overridden to only act on the levels the
+developer cares about. The <tt class="docutils literal">Timber.DebugTree</tt> does just what you'd expect --
+writing out every statement to Android's log service.</p>
+<p>An overridden <tt class="docutils literal">android.app.Application</tt> class is the perfect spot to
+implement this switching logic, as covered in the <a class="reference external" href="https://github.com/JakeWharton/timber/blob/master/timber-sample/src/main/java/com/example/timber/ExampleApp.java">Timber sample project</a>.</p>
+</div>
+<div class="section" id="summary">
+<h2>Summary</h2>
+<p>Though small, Timber is a library that punches well above its weight. It's a
+must-have for all my Android projects now and most certainly worth the time to
+look at.</p>
+<div class="section" id="vitals">
+<h3>Vitals</h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<tbody valign="top">
+<tr><td>Version</td>
+<td>2.0.0</td>
+</tr>
+<tr><td>MavenCentral</td>
+<td>Yes</td>
+</tr>
+<tr><td>Source</td>
+<td><a class="reference external" href="https://github.com/JakeWharton/timber">https://github.com/JakeWharton/timber</a></td>
+</tr>
+<tr><td>Sample Project</td>
+<td><a class="reference external" href="https://github.com/JakeWharton/timber/tree/master/timber-sample">https://github.com/JakeWharton/timber/tree/master/timber-sample</a></td>
+</tr>
+<tr><td>Mailing List</td>
+<td>No</td>
+</tr>
+<tr><td>IRC</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>blogroll</h2>
+                        <ul>
+                            <li><a href="https://plus.google.com/u/1/communities/105153134372062985968">Android Development g+</a></li>
+                            <li><a href="https://plus.google.com/u/1/communities/109244258569782858265">Square Open Source g+</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+                            <li><a href="http://droid.li/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+
+                            <li><a href="https://twitter.com/droidli">Twitter</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>
