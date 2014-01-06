@@ -5,7 +5,7 @@ from __future__ import unicode_literals
 AUTHOR = u'Steve Hill'
 SITENAME = u'droid.li'
 SITEURL = u'http://droid.li'
-TIMEZONE = 'Europe/Paris'
+TIMEZONE = u'America/Detroit'
 
 DEFAULT_LANG = u'en'
 
