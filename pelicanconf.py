@@ -9,8 +9,8 @@ TIMEZONE = u'America/Detroit'
 
 DEFAULT_LANG = u'en'
 
-THEME = "notmyidea"
-PATH = "content"
+THEME = u'notmyidea'
+PATH = u'content'
 
 RELATIVE_URLS = True
 # Feed generation is usually not desired when developing
@@ -19,16 +19,11 @@ CATEGORY_FEED_ATOM = None
 TRANSLATION_FEED_ATOM = None
 
 # Blogroll
-LINKS =  (('Pelican', 'http://getpelican.com/'),
-          ('Python.org', 'http://python.org/'),
-          ('Jinja2', 'http://jinja.pocoo.org/'),
-          ('You can modify those links in your config file', '#'),)
+LINKS =  ((u'Android Development g+', u'https://plus.google.com/u/1/communities/105153134372062985968'),
+          (u'Square Open Source g+', u'https://plus.google.com/u/1/communities/109244258569782858265'),)
 
 # Social widget
-SOCIAL = (('You can add links in your config file', '#'),
-          ('Another social link', '#'),)
+SOCIAL = ((u'Twitter', u'https://twitter.com/droidli'),)
 
 DEFAULT_PAGINATION = 7
 
-# Uncomment following line if you want document-relative URLs when developing
-#RELATIVE_URLS = True
